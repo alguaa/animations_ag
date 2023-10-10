@@ -5,19 +5,19 @@ import scipy.linalg as SLA
 import matplotlib as mpl
 import os, gc
 
+os.system('mkdir frames')
+
 mpl.rcParams['figure.figsize'] = 16/9*6,6
 
 ymin = -2
 xmin = ymin*16/9
 xmax = abs(xmin);ymax = abs(ymin)
 
-path   = 'DestDir'    #Frame directory
-
 NN = 1000       #number of x coordinates
 pwp = 40        #momentum
 sig = .15       #width of wave packet
 Vmax= pwp**2/2*1. #height of tunneling barrier
-frames = 200    #number of frames
+noframes = 200    #number of frames
 
 dx = (2*xmax-2*xmin)/NN
 xvec = N.arange(xmin*2,xmax*2,dx)
@@ -44,8 +44,8 @@ cm = cm/SLA.norm(cm)
 psi = [cm[jj]*evec[:,jj] for jj in range(len(ev))]
 
 fig = plt.figure()
-for tt in range(frames):
-    tt2 = tt/frames
+for tt in range(noframes):
+    tt2 = tt/noframes
     Psi = psi[0]*N.exp(1j*ev[0]*tt2)
     for jj in range(1,len(psi)):
         Psi+=psi[jj]*N.exp(1j*ev[jj]*tt2)
@@ -58,7 +58,7 @@ for tt in range(frames):
         plt.fill(xvec,pot/abs(b)*.5,linewidth=1,color='black')
         
     plt.plot(xvec,5*N.abs(Psi)**2,linewidth=1,color='red')
-    plt.savefig(path+'/fig'+f"{tt:04d}.png",
+    plt.savefig('frames/fig'+f"{tt:04d}.png",
                 bbox_inches='tight',pad_inches=0)
     plt.clf()
     plt.close("fig")
