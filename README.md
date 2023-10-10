@@ -19,7 +19,7 @@ FFmpeg may be used to generate a video of the frames by a simple command line in
 
 fouriercontour.py generates time dependent plots on epicycles (connected rotating rods) where the apex of the outermost rod draws an approximative path of a predefined contour in the complex plane. Here the contour is exemplified by a square. The contour may have any shape.
 
-'<span class="gray-text">wavepacket_1D.py</span>' generates time dependent plots of a wave packet moving in one dimension. The script exemplifies a Gaussian wave packet scattering off a rectangular potential, qualitatively demonstrating quantum tunneling.
+`<span class="gray-text">wavepacket_1D.py</span>` generates time dependent plots of a wave packet moving in one dimension. The script exemplifies a Gaussian wave packet scattering off a rectangular potential, qualitatively demonstrating quantum tunneling.
 
 wavepacket_2D.py generates time dependent plots of a wave packet moving in two dimensions. The script exemplifies a Gaussian wave packet moving in a rectangular domain having imprenetable walls.
 
