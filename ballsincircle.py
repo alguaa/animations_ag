@@ -1,10 +1,7 @@
 import matplotlib.pyplot as plt
-import matplotlib as mpl
 import numpy as N
-from   scipy import interpolate
-from   sympy import N as symN
 from   sympy.solvers import solve
-from   sympy import sqrt,atan,sin,cos,Symbol,re,im,diff
+from   sympy import Symbol,re,im,diff
 import scipy.linalg as SLA
 import os
 
@@ -23,7 +20,7 @@ def myangle(xp1,yp1):
         ang = N.arctan(yp1/xp1)
     return ang
 
-NN=10000
+NN=10000 #Number of data points to draw the circle
 mycircle = N.array([[1.01*N.cos(2*N.pi*ii/NN),\
                      1.01*N.sin(2*N.pi*ii/NN)] for ii in range(NN)]).T
 

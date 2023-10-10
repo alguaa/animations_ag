@@ -1,9 +1,9 @@
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
-import numpy as N
+import numpy as N   
 import scipy.linalg as SLA
-import matplotlib as mpl
-import os, gc
+import os
 
 os.system('mkdir frames')
 

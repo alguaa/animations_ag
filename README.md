@@ -8,7 +8,7 @@ To run a script, open Terminal and stand in the directory of the script and type
 
 All scripts run on python3 and need numpy, matplotlib, and typically other libraries evident from what a specific script tries to import.
 
-Execution of a script generates a 'frames' folder located at the same path as the script.
+Execution of a script generates a 'frames' folder located at the same path as the script. If not (e.g., if executed through Visual Studio), check your home directory.
 
 FFmpeg may be used to generate a video of the frames by a simple command line in the Terminal by executing the command below while being in the folder containg the frames:
 
@@ -23,4 +23,4 @@ wavepacket_1D.py generates time dependent plots of a wave packet moving in one d
 
 wavepacket_2D.py generates time dependent plots of a wave packet moving in two dimensions. The script exemplifies a Gaussian wave packet moving in a rectangular domain having imprenetable walls.
 
-ballsincircle.py generates time dependent plots of balls dropped on a circle's interior under gravity. The SymPy library is here used to compute exact reflection angles.
+ballsincircle.py generates time dependent plots of balls dropped on a circle's interior under gravity. The SymPy library is here used to compute exact reflection angles. This script is particularly badly coded, but at least it works.
