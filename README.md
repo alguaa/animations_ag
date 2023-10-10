@@ -2,7 +2,11 @@
 
 Short python scripts that generate frames to be used to animate specific concepts in physics and mathematics.
 
-All scripts run on python3 and need numpy, matplotlib, and possibly other libraries evident from what a specific script tries to import.
+To run a script, open Terminal and stand in the directory of the script and type:
+
+       python [or python3] <script>.py
+
+All scripts run on python3 and need numpy, matplotlib, and typically other libraries evident from what a specific script tries to import.
 
 Execution of a script generates a 'frames' folder located at the same path as the script.
 
