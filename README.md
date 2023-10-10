@@ -5,7 +5,7 @@ Short python scripts that generate frames to be used to animate specific concept
 All scripts run on python3 and need numpy, matplotlib, and possibly other libraries evident from what a specific script tries to import.
 
 
-'fourier' generates time dependent plots on epicycles (connected rotating rods) where the apex of the outermost rod draws an approximative path of a predefined contour in the complex plane. Here the contour is exemplified by a square. The contour may have any shape.
+fourier.py generates time dependent plots on epicycles (connected rotating rods) where the apex of the outermost rod draws an approximative path of a predefined contour in the complex plane. Here the contour is exemplified by a square. The contour may have any shape.
 
 
 'wavepacket_1D' generates time dependent plots of a wave packet moving in one dimension. The script exemplifies a Gaussian wave packet scattering off a rectangular potential, qualitatively demonstrating quantum tunneling.
