@@ -52,5 +52,5 @@ for ttmp in range(tsRange):
         plt.plot(N.real(fig2[0][ttmp][ii-1:ii+1]),N.imag(fig2[0][ttmp][ii-1:ii+1]),color='magenta',linewidth=lw)
     plt.xlim([.7,2.3])
     plt.ylim([-.1,1.3])
-    plt.savefig('mwe/fig'+f"{ttmp:05d}.png")
+    plt.savefig('~/fig'+f"{ttmp:05d}.png")
     plt.close()
