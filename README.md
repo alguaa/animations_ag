@@ -1,9 +1,4 @@
 # ag_animations
-<style>
-.gray-text {
-    color: gray;
-}
-</style>
 
 Short python scripts that generate frames to be used to animate specific concepts in physics and mathematics.
 
