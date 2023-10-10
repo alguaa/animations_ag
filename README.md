@@ -4,8 +4,6 @@ Short python scripts that generate frames to be used to animate specific concept
 
 All scripts run on python3 and need numpy, matplotlib, and possibly other libraries evident from what a specific script tries to import.
 
-The scripts:
-
 
     'fourier' generates time dependent plots on epicycles (connected rotating rods) where the apex of the outermost rod draws an approximative path of a predefined contour in the complex plane. Here the contour is exemplified by a square. The contour may have any shape.
 
