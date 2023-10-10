@@ -5,8 +5,9 @@ Short python scripts that generate frames to be used to animate specific concept
 All scripts run on python3 and need numpy, matplotlib, and possibly other libraries evident from what a specific script tries to import.
 
 Execution of a script generates a 'frames' folder located at the same path as the script.
-. 
-FFmpeg may be used to generate a video of the frames by a simple command line in the Terminal by executing the command below while being in the folder containg the frames: 
+
+FFmpeg may be used to generate a video of the frames by a simple command line in the Terminal by executing the command below while being in the folder containg the frames:
+
        ffmpeg -pattern_type glob -i "*.png"  -pix_fmt yuv420p movie.mov
 
 
