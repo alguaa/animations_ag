@@ -2,6 +2,7 @@ import numpy as N
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
+import os
 
 os.system('mkdir frames')
 
