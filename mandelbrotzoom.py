@@ -52,5 +52,3 @@ for ii in range(0,Nmax):
     plt.axis('off')
     plt.savefig('frames/fig'+f"{ii:06d}.png",bbox_inches='tight',pad_inches=0)
     plt.close("fig")
-    plt.clf()
-    gc.collect()
