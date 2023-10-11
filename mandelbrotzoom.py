@@ -1,5 +1,4 @@
 import numpy as N
-import os,gc
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
@@ -25,7 +24,7 @@ def mandelbrot_set(xmin, xmax, ymin, ymax, width, height, max_iterations):
     mandelbrot = (abs(z) < 2).astype(int)
     return mandelbrot
 
-height = int(2160/2)            # resolution of image (does not need to match the save frame resolution)
+height = int(2160/2)            # resolution of image (does not need to match the resolution of the savec frames)
 width  = int(16/9*height)       # aspect ratio = 16/9
 
 Nmax = 25       # number of frames between the initial and final frame (i.e., sets the zoom speed)
@@ -38,13 +37,13 @@ for ii in range(0,Nmax):
     print(ii,'of ',Nmax,' frames saved')
 
     # present frame zoom (XMIN, XMAX, etc.)
-    XMIN = -1*16/9*2**(-ii*zfac) - .74877   # .74877 is the x value of the point we approache 
+    XMIN = -1*16/9*2**(-ii*zfac) - .74877   # .74877 is the x value of the point we approach
     XMAX =  1*16/9*2**(-ii*zfac) - .74877
     YMIN = -1*2**(-ii*zfac)      - .065176  # .065176 is the y value of the point we approach
     YMAX =  1*2**(-ii*zfac) - .065176
     ext = [XMIN,XMAX,YMIN,YMAX] 
     
-    #Function that aims to provide a sufficient number of iterations at a specific zoom level
+    # function that aims to provide a sufficient number of iterations at a specific zoom level
     iters = int(15+zfac*30/abs(XMIN-XMAX)**(.25/zfac)-0*4*N.log(abs(XMIN-XMAX)))
 
     iters = int(myiters[ii])
