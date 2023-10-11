@@ -1,8 +1,8 @@
 # ag_animations
 
-Short python scripts that generate frames to be used to animate specific concepts in physics and mathematics.
+Short easy-to-use python scripts that generate frames for animating  specific concepts in physics and mathematics.
 
-To run a script, open Terminal and stand in the directory of the script and type:
+To run a script, open Terminal, stand in the directory of the script and type:
 
        python [or python3] <script>.py
 
@@ -28,3 +28,6 @@ Generates time dependent plots of a wave packet moving in two dimensions. The sc
 
 **ballsincircle.py**  
 Generates time dependent plots of balls dropped on a circle's interior under gravity. The SymPy library is here used to compute exact reflection angles. This script is particularly badly coded, but at least it works.
+
+**mandelbrotzoom.py**  
+Generates plots of gradually increasing zoom around a particular coordinate of the Mandelbrot set. The script exemplifies zooming into the so-called seahorse valley.
