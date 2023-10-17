@@ -35,5 +35,5 @@ Generates time dependent plots of a wave packet moving in two dimensions. The sc
 ### ballsincircle.py  
 Generates time dependent plots of balls dropped on a circle's interior under gravity. The SymPy library is here used to compute exact reflection angles. This script is particularly badly coded, but at least it works.
 
-**mandelbrotzoom.py**  
+### mandelbrotzoom.py  
 Generates plots of gradually increasing zoom around a particular coordinate of the Mandelbrot set. The script exemplifies zooming into the so-called seahorse valley.
