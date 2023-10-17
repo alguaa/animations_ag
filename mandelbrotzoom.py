@@ -2,7 +2,10 @@ import numpy as N
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
-import os
+import os,time
+import warnings
+warnings.filterwarnings("ignore", category=RuntimeWarning, message="overflow encountered")
+warnings.filterwarnings("ignore", category=RuntimeWarning, message="invalid value encountered")
 
 os.system('mkdir frames')
 
@@ -25,17 +28,16 @@ def mandelbrot_set(xmin, xmax, ymin, ymax, width, height, max_iterations):
     mandelbrot = (abs(z) < 2).astype(int)
     return mandelbrot
 
-height = int(2160/2)            # resolution of image (does not need to match the resolution of the savec frames)
+height = int(2160/2)            # resolution of image (does not need to match the resolution of the saved frames)
 width  = int(16/9*height)       # aspect ratio = 16/9
 
-Nmax = 25       # number of frames between the initial and final frame (i.e., sets the zoom speed)
+Nmax = 50       # number of frames between the initial and final frame (i.e., sets the zoom speed)
 zfac = 20/Nmax
 itermax = 600   # this number depends on how deep the zoom is. Deeper means larger itermax
 myiters = N.linspace(25,600,Nmax)
 
+print('Calculation starts. Note, calculation time increseas with zoom level.')
 for ii in range(0,Nmax):
-    
-    print(ii,'of ',Nmax,' frames saved')
 
     # present frame zoom (XMIN, XMAX, etc.)
     XMIN = -1*16/9*2**(-ii*zfac) - .74877   # .74877 is the x value of the point we approach
@@ -53,3 +55,5 @@ for ii in range(0,Nmax):
     plt.axis('off')
     plt.savefig('frames/fig'+f"{ii:06d}.png",bbox_inches='tight',pad_inches=0)
     plt.close("fig")
+    if N.mod(ii,round(Nmax/20)) == 0:
+        print(round(100*ii/Nmax),'% of the frames saved')

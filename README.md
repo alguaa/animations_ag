@@ -1,7 +1,13 @@
 # ag_animations
 
+- [Introduction](#introduction)
+- [How to use](#installation)
+- [Short description of the scripts](#usage)
+
+## Introduction
 Short easy-to-use python scripts that generate frames for animating  specific concepts in physics and mathematics.
 
+## How to use
 To run a script, open Terminal, stand in the directory of the script and type:
 
        python [or python3] <script>.py
@@ -15,18 +21,18 @@ FFmpeg may be used to generate a video of the frames by a simple command line in
        ffmpeg -pattern_type glob -i "*.png"  -pix_fmt yuv420p movie.mov
 
 
-*** Short description of the scripts ***
+## Short description of the scripts 
 
-**fouriercontour.py**  
+### fouriercontour.py  
 Generates time dependent plots on epicycles (connected rotating rods) where the apex of the outermost rod draws an approximative path of a predefined contour in the complex plane. Here the contour is exemplified by a square. The contour may have any shape.
 
-**wavepacket_1D.py**  
+### wavepacket_1D.py 
 Generates time dependent plots of a wave packet moving in one dimension. The script exemplifies a Gaussian wave packet scattering off a rectangular potential, qualitatively demonstrating quantum tunneling.
 
-**wavepacket_2D.py**  
-Generates time dependent plots of a wave packet moving in two dimensions. The script exemplifies a Gaussian wave packet moving in a rectangular domain having imprenetable walls.
+### wavepacket_2D.py  
+Generates time dependent plots of a wave packet moving in two dimensions. The script exemplifies a Gaussian wave packet moving in a rectangular domain having impenetrable walls.
 
-**ballsincircle.py**  
+### ballsincircle.py  
 Generates time dependent plots of balls dropped on a circle's interior under gravity. The SymPy library is here used to compute exact reflection angles. This script is particularly badly coded, but at least it works.
 
 **mandelbrotzoom.py**  

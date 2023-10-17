@@ -64,9 +64,10 @@ def plotandsave(tt,psi):
 t1 = time.process_time()
 for tt in range(tmax):
     plotandsave(tt,psi)
-    print(tt,'saved')
     psi = N.array([isolve.gmres(LHS(jj),RHS(jj),tol=TOL)[0] for jj in range(Nx)])
     psi = N.array([isolve.gmres(LHS2(ii),RHS2(ii),tol=TOL)[0] for ii in range(Nx)])
     psi = psi/SLA.norm(psi)
+    if N.mod(tt,round(tmax/10)) == 0:
+        print(round(100*tt/tmax),'% of the frames saved')
 tm = time.process_time()-t1
-print('\nCALCULATION DONE, FRAMES SAVED. Total time:',tm,'s =',tm/60,'min')
+print('\nAll frames saved in ',round(tm,1),'s')
