@@ -1,4 +1,4 @@
-# ag_animations
+# animations_ag
 
 - [Introduction](#introduction)
 - [How to use](#installation)
