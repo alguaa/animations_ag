@@ -4,7 +4,7 @@ import os,time
 
 os.system('mkdir ./frames') # creates a folder in which the frames are saved
 
-timesteps = 61
+timesteps = 121
 dt = 1/timesteps    # incremental time between subsequent frames
 factor = 3;         # number of periods
 tsRange = timesteps*factor
