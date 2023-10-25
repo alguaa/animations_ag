@@ -13,24 +13,28 @@ ymin = -2
 xmin = ymin*16/9
 xmax = abs(xmin);ymax = abs(ymin)
 
-NN = 1000       #number of x coordinates
-pwp = 40        #momentum
-sig = .15       #width of wave packet
-Vmax= pwp**2/2*1. #height of tunneling barrier
-noframes = 200    #number of frames
+NN   = 1000        # number of x coordinates
+pwp  = 40          # momentum
+sig  = .15         # width of wave packet
+Vmax = pwp**2/2*1. # height of tunneling barrier
+noframes = 200     # number of frames
 
 dx = (2*xmax-2*xmin)/NN
 xvec = N.arange(xmin*2,xmax*2,dx)
 b  = -1/2/dx**2
 
-#Finite difference Laplacian 
+# finite difference Laplacian 
 diag   = -N.diagflat(2*b*N.ones(NN))
 offdiag = N.diagflat(b*N.ones(NN-1),1)
 D2 = diag+offdiag+offdiag.transpose()
+
+# add potential to diagonal
 pot = N.zeros(NN)
 for ii in range(NN):
     if (ii>int(.495*NN) and ii<int(.505*NN)):
         pot[ii] = Vmax
+
+# Hamiltonian; H = D2 + V
 H = D2+N.diagflat(pot)
 
 ev,evec = SLA.eigh(H)

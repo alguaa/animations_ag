@@ -2,18 +2,18 @@ import numpy as N
 import matplotlib.pyplot as plt
 import os,time
 
-os.system('mkdir ./frames') #Creates a folder in which the frames are saved
+os.system('mkdir ./frames') # creates a folder in which the frames are saved
 
 timesteps = 61
-dt = 1/timesteps    #incremental time between subsequent frames
-factor = 3;         #number of periods
+dt = 1/timesteps    # incremental time between subsequent frames
+factor = 3;         # number of periods
 tsRange = timesteps*factor
 
-nn = 1000000000    #number of points defining a function when made here
-mm = 7       #number of basis functions in the F-expansion
-lw = 1       #line width of plots
+nn = 1000000000    # number of points defining a function when made here
+mm = 7             # number of basis functions in the F-expansion
+lw = 1             # line width of plots
 
-#Define function in complex plane
+# define function in complex plane
 function2=[]
 for ii in range(nn):
     if ii<int(nn/4)+1:
@@ -26,13 +26,13 @@ for ii in range(nn):
         function2.append(2-4*(ii-int(3*nn/4))/nn)
 function2 = N.array(function2)+.1*1j
 
-#Returns positions for all rods for each time stamp
+# returns positions for all rods at each time stamp
 def myfourier(function,nn,mm):
     cf = [1./nn*N.sum([function[ii]*N.exp(-2*N.pi*1j*ii*jj/nn)\
                        for ii in range(0,nn)]) for jj in range(-mm,mm+1)]
     fourier = [N.sum([cf[ii]*N.exp(2*N.pi*1j*(ii-mm)*tt*dt)\
                       for ii in range(0,2*mm+1)]) for tt in range(0,timesteps+1)]
-    #sort frequencies to match coefficients
+    # sort frequencies to match Fourier coefficients
     mmAsUsed = [ii for ii in range(-mm,mm+1)];
     mmSorted = sorted(mmAsUsed,key=abs)
     idx = [(N.abs(mmSorted[ii]-N.array(mmAsUsed))).argmin() for ii in range(2*mm+1)]
