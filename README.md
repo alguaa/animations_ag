@@ -7,7 +7,7 @@
 ## Introduction
 Short easy-to-use python scripts that generate frames for animating  specific concepts in physics and mathematics.
 
-## How to use
+## Usage
 To run a script, open Terminal, stand in the directory of the script and type:
 
        python [or python3] <script>.py
@@ -21,7 +21,7 @@ FFmpeg may be used to generate a video of the frames by a simple command line in
        ffmpeg -pattern_type glob -i "*.png"  -pix_fmt yuv420p movie.mov
 
 
-## Short description of the scripts 
+## Description
 
 ### fouriercontour.py  
 Generates time dependent plots on epicycles (connected rotating rods) where the apex of the outermost rod draws an approximative path of a predefined contour in the complex plane. Here the contour is exemplified by a square. The contour may have any shape.
