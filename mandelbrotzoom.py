@@ -36,13 +36,13 @@ zfac = 20/Nmax
 itermax = 600   # this number depends on how deep the zoom is. Deeper means larger itermax
 myiters = N.linspace(25,600,Nmax)
 
-print('Calculation starts. Note, calculation time increseas with zoom level.')
-for ii in range(0,Nmax):
+print('\nCalculation starts. Note, calculation time increases with zoom level.')
 
+for ii in range(0,Nmax):
     # present frame zoom (XMIN, XMAX, etc.)
-    XMIN = -1*16/9*2**(-ii*zfac) - .74877   # .74877 is the x value of the point we approach
+    XMIN = -1*16/9*2**(-ii*zfac) - .74877   # .74877 is the x coordinate (real axis) of the point we zoom towards
     XMAX =  1*16/9*2**(-ii*zfac) - .74877
-    YMIN = -1*2**(-ii*zfac)      - .065176  # .065176 is the y value of the point we approach
+    YMIN = -1*2**(-ii*zfac)      - .065176  # .065176 is the y coordinate (imaginary axis) of the point we zoom towards
     YMAX =  1*2**(-ii*zfac) - .065176
     ext = [XMIN,XMAX,YMIN,YMAX] 
     

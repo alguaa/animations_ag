@@ -1,8 +1,8 @@
 # animations_ag
 
 - [Introduction](#introduction)
-- [How to use](#installation)
-- [Short description of the scripts](#usage)
+- [Usage](#usage)
+- [Description](#description)
 
 ## Introduction
 Short easy-to-use python scripts that generate frames for animating  specific concepts in physics and mathematics.
