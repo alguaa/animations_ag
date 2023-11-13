@@ -51,13 +51,17 @@ fig = plt.figure()
 for tt in range(noframes):
     tt2 = tt/noframes
     Psi = psi[0]*N.exp(1j*ev[0]*tt2)
+
     for jj in range(1,len(psi)):
         Psi+=psi[jj]*N.exp(1j*ev[jj]*tt2)
+
     plt.xlim([xmin,xmax])
     plt.ylim([ymin*.3,ymax*.3])
     plt.gca().add_patch(Rectangle((-4,-10),10,10,linewidth=1,edgecolor=None,facecolor='gray'))
+
     if max(pot)>0:
         plt.fill(xvec,pot/abs(b)*.5,linewidth=1,color='gray')
+
     else:
         plt.fill(xvec,pot/abs(b)*.5,linewidth=1,color='black')
         

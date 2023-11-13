@@ -23,9 +23,12 @@ def mandelbrot_set(xmin, xmax, ymin, ymax, width, height, max_iterations):
     y = N.linspace(ymin, ymax, height).reshape((height, 1))
     c = x + y * 1j
     z = N.zeros_like(c)
+
     for i in range(max_iterations):
         z = z**2 + c
+
     mandelbrot = (abs(z) < 2).astype(int)
+
     return mandelbrot
 
 height = int(2160/2)            # resolution of image (does not need to match the resolution of the saved frames)
@@ -55,5 +58,6 @@ for ii in range(0,Nmax):
     plt.axis('off')
     plt.savefig('frames/fig'+f"{ii:06d}.png",bbox_inches='tight',pad_inches=0)
     plt.close("fig")
+    
     if N.mod(ii,round(Nmax/20)) == 0:
         print(round(100*ii/Nmax),'% of the frames saved')

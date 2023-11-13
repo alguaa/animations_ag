@@ -24,7 +24,7 @@ sig  = .07                # width of Gaussian
 cwp  = [Nx/3,Ny/4]        # start position
 pwp  = [-4*Nx/10,6*Nx/10] # momentum (2pi/lambda)
     
-# potential
+# potential matrix
 V = N.zeros((Nx,Ny))
 # define whatever potential you wish here
 
@@ -32,6 +32,7 @@ V = N.zeros((Nx,Ny))
 psi = [N.exp(1j*(pwp[0]*(ii-cwp[0])+pwp[1]*(jj-cwp[1]))*dx-\
              ((ii-cwp[0])**2+(jj-cwp[1])**2)*dx**2/(2*sig**2))\
        for ii in range(Nx) for jj in range(Ny)]
+
 psi = N.array(psi).reshape(Nx,Ny)
 psi = psi/SLA.norm(psi)
 
@@ -46,12 +47,15 @@ lhs[2,:] = lhs[0,::-1]  # lower off-diagonal
 def LHS(idx):
     mtx = sparse.spdiags([lhs[0],2*a-2*b-V[:,idx]/2,lhs[2]],[1,0,-1],Nx,Nx)
     return sparse.csr_matrix(mtx) 
+
 def LHS2(idx):
     mtx = sparse.spdiags([lhs[0],2*a-2*b-V[idx,:]/2,lhs[2]],[1,0,-1],Nx,Nx)
     return sparse.csr_matrix(mtx)
+
 def RHS(idx):
     return  N.array((2*a+2*b+V[:,idx]/2)*psi[:,idx]-\
                     b*N.array([psi[ii,min(Nx-1,idx+1)]+psi[ii,max(0,idx-1)] for ii in range(Nx)]))
+
 def RHS2(idx):
     return N.array((2*a+2*b+V[idx,:]/2)*psi[:,idx]-\
                    b*N.array([psi[jj,min(Nx-1,idx+1)]+psi[jj,max(0,idx-1)] for jj in range(Nx)]))
@@ -62,12 +66,15 @@ def plotandsave(tt,psi):
     plt.savefig('frames/fig'+f"{tt:04d}.png") 
 
 t1 = time.process_time()
+
 for tt in range(tmax):
     plotandsave(tt,psi)
     psi = N.array([isolve.gmres(LHS(jj),RHS(jj),tol=TOL)[0] for jj in range(Nx)])
     psi = N.array([isolve.gmres(LHS2(ii),RHS2(ii),tol=TOL)[0] for ii in range(Nx)])
     psi = psi/SLA.norm(psi)
+
     if N.mod(tt,round(tmax/10)) == 0:
         print(round(100*tt/tmax),'% of the frames saved')
+
 tm = time.process_time()-t1
 print('\nAll frames saved in ',round(tm,1),'s')
