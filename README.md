@@ -43,6 +43,6 @@ Generates a single stringart image based on an input .jpg image. Just type
 
 	  python (or python3) stringart.py -img </path/to/image>.jpg
 
-to obtain a first draft of your generated stringart. The default values seem working reasonably well on portraits; however further elaboration with the flags is likely needed. The script auto crops the input image based on the smallest side; hence, to properly frame your image, a substantially quadratic input image is recommended. Needs the PIL library (pip install Pillow). For further usage information, type
+to obtain a first draft of your generated stringart. The default values seem working reasonably well on portraits; however further elaboration with the flags is likely needed. The script auto crops the input image based on its smallest side; hence, to properly frame your image, a substantially quadratic input image is recommended. Needs the PIL library (pip install Pillow). For further usage information, type
 
    	  python (or python3) stringart.py --h
