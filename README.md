@@ -37,3 +37,12 @@ Generates time dependent plots of balls dropped on a circle's interior under gra
 
 ### mandelbrotzoom.py  
 Generates plots of gradually increasing zoom around a particular coordinate of the Mandelbrot set. The script exemplifies zooming into the so-called seahorse valley.
+
+### stringart.py
+Generates a single stringart image based on an input .jpg image. Just type
+
+	  python (or python3) stringart.py -img </path/to/image>.jpg
+
+to obtain a first draft of your generated stringart. The default values seems working reasonably well on portraits; however further elaboration with the flags is likely needed. Needs the PIL library (pip install Pillow). For further use information, type
+
+   	  python (or python3) stringart.py --h
