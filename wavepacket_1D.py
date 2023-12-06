@@ -13,7 +13,7 @@ ymin = -2
 xmin = ymin*16/9
 xmax = abs(xmin);ymax = abs(ymin)
 
-NN   = 1000        # number of x coordinates
+NN   = 2000        # number of x coordinates
 pwp  = 40          # momentum
 sig  = .15         # width of wave packet
 Vmax = pwp**2/2*1. # height of tunneling barrier
