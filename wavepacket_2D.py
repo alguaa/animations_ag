@@ -4,7 +4,7 @@ import matplotlib as mpl
 from scipy import sparse
 import scipy.linalg as SLA
 from scipy.sparse.linalg import isolve
-import time, os
+import os, time
 
 os.system('mkdir frames')
 
