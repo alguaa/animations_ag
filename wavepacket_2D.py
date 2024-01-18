@@ -5,6 +5,7 @@ from scipy import sparse
 import scipy.linalg as SLA
 from scipy.sparse.linalg import isolve
 import os, time
+sd
 
 os.system('mkdir frames')
 
