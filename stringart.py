@@ -10,7 +10,7 @@ from PIL import Image, ImageOps, ImageFilter, ImageEnhance
 T, F = True, False
 
 class stringart:
-	def __init__(self,scalefactor,weight,lines,linewidth,\
+        def __init__(self,scalefactor,weight,lines,linewidth,\
 		invertimage,contour,autosaturation,resolution,image_path):
 		
 		self.scalefactor = scalefactor
