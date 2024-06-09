@@ -46,3 +46,10 @@ Generates a single stringart image based on an input .jpg image. Just type
 to obtain a first draft of your generated stringart. The default values seem working reasonably well on portraits; however further elaboration with the flags is likely needed. The script auto crops the input image based on its smallest side; hence, to properly frame your image, a substantially quadratic input image is recommended. Needs the PIL library (pip install Pillow). For further usage information, type
 
    	  python (or python3) stringart.py --h
+
+### softbody.py
+Generates frames of simple rectangularly arranged grid points connected by springs falling under gravity and bouncing on a floor. Aimed to be a starting point sandbox. Just execute by
+
+	  python (or python3) softbody.py
+
+and elaborate with the parameters in the script.
