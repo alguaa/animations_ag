@@ -96,8 +96,6 @@ for step in range(num_steps):
     velocities += (total_forces / mass) * time_step
     positions += velocities * time_step
     floor_collision(positions, velocities)
-    #total_energy = calculate_energy(positions, velocities)
-    #angular_momentum = calculate_angular_momentum(positions, velocities)
     
     fig, ax = plt.subplots()
     plt.scatter(positions[:, 0], positions[:, 1], color='blue', s=10)   # draw balls
